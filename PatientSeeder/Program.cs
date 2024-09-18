@@ -24,11 +24,11 @@ namespace PatientSeeder
         {
             Console.WriteLine("Start adding 100 patients.");
             /*https://localhost:32773/swagger/index.html*/
-            //var client = new HttpClient { BaseAddress = new Uri("https://localhost:5001/api/") };
-            var client = new HttpClient { BaseAddress = new Uri("https://localhost:32785/api/") };
+            var base_url = "https://localhost:32792/api/";
+            var client = new HttpClient { BaseAddress = new Uri(base_url) };
             client.Timeout = TimeSpan.FromSeconds(1000);
             var rnd = new Random();
-            for (int i = 0; i < 5/*100*/; i++)
+            for (int i = 0; i < 100; i++)
             {
                 var p = new Patient
                 {
